@@ -1,0 +1,25 @@
+1.C/C++ Compiler->Preprocessor->Defined symbols:
+添加下面3行
+MAKE_CRC_SHDW
+FEATURE_SBL
+OAD_KEEP_NV_PAGES //可选，保留NV页，如已经绑定的设备信息
+
+2.Build Actions->Post-build command line:
+添加如下，用于编译后sim文件转bin文件：
+"$PROJ_DIR$\..\..\common\cc2540\cc254x_sim2bin.exe" "$PROJ_DIR$\Debug\Exe\00.sim" "$PROJ_DIR$\Debug\Exe\00.bin"
+(注意下路径，实际是用cc254x_sim2bin.exe把sim文件转成bin文件，按自己的文件路径修改)
+
+3.Linker->Config
+a.Linker configuration file:
+勾选：Override default
+填入：cc254x_f256_sbl.xcl
+b.Search path:
+添加：$PROJ_DIR$\..\..\common\cc2540
+
+4.linker->Extar Output
+a.Generate extra output file:
+勾选：Override default
+填入：00.sim
+b.Format:
+Output format:选simple-code
+
