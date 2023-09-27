@@ -32,3 +32,4 @@ prebuild文件夹是已经编译好的bootloader："SBL_CC254xF256_PORT1_UART.he
 由于芯片烧录bootloader，所以启动流程有点不一样，用户的project也要相应修改，详细看“编译可以使用serial bootloader烧录的工程.txt”或者“CC2540_ Serial Bootloading.mhtml”
 
 
+演示：https://www.bilibili.com/video/BV1xF411m7ZZ
